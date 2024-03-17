@@ -27,7 +27,7 @@ public class MainController {
 
 	@GetMapping("/test")
     public String test() {
-    	return "Success";
+    	return "Success Test";
         
     }
 }

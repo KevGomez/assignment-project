@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,9 @@ public class MainService {
     
     @Autowired
     private ShopperProductRepository shopperProductRepository;
+    
+    @Value("${relevancy.score}")
+    private Double relevencyScore;
     
     public Product saveProduct(String uuid, Product product) {
     	try {
@@ -96,7 +100,7 @@ public class MainService {
     		Pageable pageable = PageRequest.of(0, limit);
     		Shopper shopper = shopperRepository.findByShopperId(shopperId);
     		if(shopper != null) {
-    			return shopperProductRepository.findProductsByShopperIdAndCategoryAndBrand(shopper.getId(), category, brand, pageable);
+    			return shopperProductRepository.findProductsByShopperIdAndCategoryAndBrand(shopper.getId(), category, brand, relevencyScore, pageable);
     		}else {
     			return null;
     		}

@@ -7055,3 +7055,98 @@ java.lang.StackOverflowError: null
 21:08:55.857 [http-nio-9090-exec-1] INFO  c.s.s.controller.AuthController - 348341a0918d4d118e9ef6b28f37426c  MainController: savePersonalizedData Method Called...ShopperID: S-1002
 21:09:01.944 [http-nio-9090-exec-3] INFO  c.s.s.controller.AuthController - b2529b76fb054435894abf8801ce41c2  MainController: savePersonalizedData Method Called...ShopperID: S-1001
 21:09:07.476 [http-nio-9090-exec-4] INFO  c.s.s.controller.AuthController - b86d2cc216e2463590fdd6f26329668e  MainController: savePersonalizedData Method Called...ShopperID: S-1000
+21:10:50.746 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+21:10:50.748 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+21:10:50.754 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+22:02:26.311 [main] INFO  c.s.s.SpringServiceApplication - Running SpringService for SmashTaps v0.0.1...
+22:02:26.816 [main] INFO  c.s.s.SpringServiceApplication - Starting SpringServiceApplication using Java 1.8.0_301 on 192.168.1.6 with PID 87978 (/Users/kevingomez/Documents/Projects/Assignment Workspace Git/assignment-project/target/classes started by kevingomez in /Users/kevingomez/Documents/Projects/Assignment Workspace Git/assignment-project)
+22:02:26.816 [main] INFO  c.s.s.SpringServiceApplication - No active profile set, falling back to default profiles: default
+22:02:27.436 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+22:02:27.438 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+22:02:27.601 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 154 ms. Found 4 JPA repository interfaces.
+22:02:27.621 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+22:02:27.622 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:02:27.639 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.smashtaps.springService.repository.ProductRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+22:02:27.640 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.smashtaps.springService.repository.ShopperProductRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+22:02:27.641 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.smashtaps.springService.repository.ShopperRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+22:02:27.643 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.smashtaps.springService.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+22:02:27.644 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+22:02:28.258 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9090 (http)
+22:02:28.271 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+22:02:28.271 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+22:02:28.272 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+22:02:28.360 [main] INFO  o.a.c.c.C.[.[.[/springService] - Initializing Spring embedded WebApplicationContext
+22:02:28.361 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1500 ms
+22:02:28.778 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+22:02:28.823 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+22:02:28.940 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+22:02:29.035 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+22:02:29.474 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+22:02:29.498 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+22:02:30.494 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:02:30.507 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+22:02:30.580 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+22:02:31.476 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a510e0e, org.springframework.security.web.context.SecurityContextPersistenceFilter@401b67a9, org.springframework.security.web.header.HeaderWriterFilter@11582db6, org.springframework.security.web.authentication.logout.LogoutFilter@3cb49121, com.smashtaps.springService.config.JwtTokenFilter@8315e4a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41b66d1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7846913f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4efe014f, org.springframework.security.web.session.SessionManagementFilter@388e4c25, org.springframework.security.web.access.ExceptionTranslationFilter@351e86b2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d654b5f]
+22:02:32.052 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+22:02:32.081 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9090 (http) with context path '/springService'
+22:02:32.093 [main] INFO  c.s.s.SpringServiceApplication - Started SpringServiceApplication in 5.607 seconds (JVM running for 6.068)
+22:02:33.791 [http-nio-9090-exec-1] INFO  o.a.c.c.C.[.[.[/springService] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:02:33.791 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22:02:33.794 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+22:02:33.949 [http-nio-9090-exec-1] INFO  c.s.s.controller.AuthController - 3c46e62643894ac392cfb67b5221a6f5  AuthController: Login Method Called...Username: kevin
+22:02:33.950 [http-nio-9090-exec-1] INFO  c.s.s.service.AuthService - 3c46e62643894ac392cfb67b5221a6f5  AuthService: findByUsername Method Called...Username: kevin
+22:02:51.812 [http-nio-9090-exec-3] INFO  c.s.s.controller.AuthController - 295b51b0bcf943a9b49fc872d04215b0  MainController: savePersonalizedData Method Called...ShopperID: S-1000
+22:03:54.225 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+22:03:54.227 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+22:03:54.232 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+22:03:57.290 [main] INFO  c.s.s.SpringServiceApplication - Running SpringService for SmashTaps v0.0.1...
+22:03:57.794 [main] INFO  c.s.s.SpringServiceApplication - Starting SpringServiceApplication using Java 1.8.0_301 on 192.168.1.6 with PID 87996 (/Users/kevingomez/Documents/Projects/Assignment Workspace Git/assignment-project/target/classes started by kevingomez in /Users/kevingomez/Documents/Projects/Assignment Workspace Git/assignment-project)
+22:03:57.795 [main] INFO  c.s.s.SpringServiceApplication - No active profile set, falling back to default profiles: default
+22:03:58.499 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+22:03:58.501 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+22:03:58.662 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 148 ms. Found 4 JPA repository interfaces.
+22:03:58.684 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+22:03:58.685 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:03:58.702 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.smashtaps.springService.repository.ProductRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+22:03:58.703 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.smashtaps.springService.repository.ShopperProductRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+22:03:58.705 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.smashtaps.springService.repository.ShopperRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+22:03:58.706 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.smashtaps.springService.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+22:03:58.707 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+22:03:59.254 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9090 (http)
+22:03:59.265 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+22:03:59.265 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+22:03:59.266 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+22:03:59.346 [main] INFO  o.a.c.c.C.[.[.[/springService] - Initializing Spring embedded WebApplicationContext
+22:03:59.347 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1498 ms
+22:03:59.780 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+22:03:59.824 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+22:03:59.937 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+22:04:00.028 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+22:04:00.416 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+22:04:00.432 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+22:04:01.212 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+22:04:01.222 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+22:04:01.267 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+22:04:02.077 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18dbc1b, org.springframework.security.web.context.SecurityContextPersistenceFilter@401b67a9, org.springframework.security.web.header.HeaderWriterFilter@11582db6, org.springframework.security.web.authentication.logout.LogoutFilter@3cb49121, com.smashtaps.springService.config.JwtTokenFilter@2a510e0e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@41b66d1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7846913f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8315e4a, org.springframework.security.web.session.SessionManagementFilter@388e4c25, org.springframework.security.web.access.ExceptionTranslationFilter@351e86b2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@51468039]
+22:04:02.542 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+22:04:02.563 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9090 (http) with context path '/springService'
+22:04:02.577 [main] INFO  c.s.s.SpringServiceApplication - Started SpringServiceApplication in 5.121 seconds (JVM running for 5.599)
+22:04:59.905 [http-nio-9090-exec-2] INFO  o.a.c.c.C.[.[.[/springService] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:04:59.905 [http-nio-9090-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22:04:59.907 [http-nio-9090-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+22:04:59.991 [http-nio-9090-exec-2] WARN  c.s.s.config.JwtTokenFilter - JWT token has expired: JWT expired at 2024-03-17T20:49:41Z. Current time: 2024-03-17T22:04:59Z, a difference of 4518991 milliseconds.  Allowed clock skew: 0 milliseconds.
+22:05:06.446 [http-nio-9090-exec-3] INFO  c.s.s.controller.AuthController - 5c4a74a3be3d4d62b7da49a4fdbec2d0  MainController: savePersonalizedData Method Called...ShopperID: S-1000
+22:05:55.553 [http-nio-9090-exec-4] INFO  c.s.s.controller.AuthController - 19a143844cfa4a2e9c6c011d7081723d  MainController: saveProduct Method Called...ProductID: AD-543564697
+22:05:55.554 [http-nio-9090-exec-4] INFO  c.s.s.service.AuthService - 19a143844cfa4a2e9c6c011d7081723d  MainService: saveProduct Method Called...ProductID: AD-543564697
+22:06:37.636 [http-nio-9090-exec-5] INFO  c.s.s.controller.AuthController - b3adca7a6fb14923bcb0ba821bee50a3  MainController: saveProduct Method Called...ProductID: CD-543564697
+22:06:37.636 [http-nio-9090-exec-5] INFO  c.s.s.service.AuthService - b3adca7a6fb14923bcb0ba821bee50a3  MainService: saveProduct Method Called...ProductID: CD-543564697
+22:07:13.044 [http-nio-9090-exec-6] INFO  c.s.s.controller.AuthController - 8d6f3e2383134e6fbcc8f425d0ff17a5  MainController: saveProduct Method Called...ProductID: ED-543564697
+22:07:13.044 [http-nio-9090-exec-6] INFO  c.s.s.service.AuthService - 8d6f3e2383134e6fbcc8f425d0ff17a5  MainService: saveProduct Method Called...ProductID: ED-543564697
+22:07:33.730 [http-nio-9090-exec-7] WARN  c.s.s.config.JwtTokenFilter - JWT token has expired: JWT expired at 2024-03-17T20:49:41Z. Current time: 2024-03-17T22:07:33Z, a difference of 4672730 milliseconds.  Allowed clock skew: 0 milliseconds.
+22:07:52.618 [http-nio-9090-exec-8] INFO  c.s.s.controller.AuthController - 862aa8b3745c4fb5b10d6326b39376d0  MainController: savePersonalizedData Method Called...ShopperID: S-1000
+22:07:52.618 [http-nio-9090-exec-8] INFO  c.s.s.service.AuthService - 862aa8b3745c4fb5b10d6326b39376d0  MainService: savePersonalizedData Method Called...ShopperID: S-1000
+22:07:59.064 [http-nio-9090-exec-9] INFO  c.s.s.controller.AuthController - 8372f02079b24222bd34f18aca7a4347  MainController: savePersonalizedData Method Called...ShopperID: S-1000
+22:08:13.219 [http-nio-9090-exec-10] INFO  c.s.s.controller.AuthController - 9de8b8f99da94dc7a3c18e751c67a567  MainController: savePersonalizedData Method Called...ShopperID: S-1000
+22:08:19.701 [http-nio-9090-exec-1] INFO  c.s.s.controller.AuthController - 0fa48365fdf0496c8a06ba19d217f0d8  MainController: savePersonalizedData Method Called...ShopperID: S-1000
+22:08:27.947 [http-nio-9090-exec-2] INFO  c.s.s.controller.AuthController - 75cf29ab6c6c4d379b74f37143c04234  MainController: savePersonalizedData Method Called...ShopperID: S-1000
+22:08:38.839 [http-nio-9090-exec-3] INFO  c.s.s.controller.AuthController - e4fbaacf3c6345c2b18e5ed4703f0b27  MainController: savePersonalizedData Method Called...ShopperID: S-1000

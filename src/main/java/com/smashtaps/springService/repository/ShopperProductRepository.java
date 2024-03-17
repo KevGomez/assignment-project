@@ -16,8 +16,9 @@ public interface ShopperProductRepository extends JpaRepository<ShopperProduct, 
 	@Query("SELECT sp.product FROM ShopperProduct sp WHERE sp.shopper.id = :shopperId " +
 		       "AND (:category IS NULL OR :category = '' OR sp.product.category = :category) " +
 		       "AND (:brand IS NULL OR :brand = '' OR sp.product.brand = :brand) " +
+		       "AND sp.relevancyScore > :maxRelevancyScore " +
 		       "ORDER BY sp.relevancyScore DESC")
-		List<Product> findProductsByShopperIdAndCategoryAndBrand(Long shopperId, String category, String brand, Pageable pageable);
+		List<Product> findProductsByShopperIdAndCategoryAndBrand(Long shopperId, String category, String brand, Double maxRelevancyScore, Pageable pageable);
 
 	
 }

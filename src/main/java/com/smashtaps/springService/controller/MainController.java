@@ -20,6 +20,7 @@ import com.smashtaps.springService.models.LoginResponse;
 import com.smashtaps.springService.models.PersonalizedData;
 import com.smashtaps.springService.models.Product;
 import com.smashtaps.springService.models.ProductRequest;
+import com.smashtaps.springService.models.ResponseModel;
 import com.smashtaps.springService.models.Shopper;
 import com.smashtaps.springService.service.MainService;
 
@@ -99,7 +100,7 @@ public class MainController {
     }
 	
 	@GetMapping("/products")
-    public List<Product> getProducts(
+    public ResponseModel getProducts(
             @RequestParam String shopperId,
             @RequestParam(required = false) String category,
             @RequestParam(required = false) String brand,
@@ -108,11 +109,18 @@ public class MainController {
 		String uuid = UUID.randomUUID().toString().replaceAll("-", "") + " ";
 		try {
 			logger.info(uuid + " MainController: savePersonalizedData Method Called...ShopperID: " + shopperId);
-			return mainService.getProducts(uuid, shopperId, category, brand, limit);
+			List<Product> getList = mainService.getProducts(uuid, shopperId, category, brand, limit);
+			if(getList != null) {
+				return new ResponseModel("0", "Success", getList);
+			}
+			else {
+				return new ResponseModel("0", "Success - No Data", null);
+			}
+			 
 		}catch(Exception e) {
 			logger.error(uuid + ": ERROR: MainController getProducts: ");
     		e.printStackTrace();
-    		return null;
+    		return new ResponseModel("1", "Failed", null);
 		}
         
     }

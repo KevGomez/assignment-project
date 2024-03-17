@@ -95,7 +95,12 @@ public class MainService {
     	try {
     		Pageable pageable = PageRequest.of(0, limit);
     		Shopper shopper = shopperRepository.findByShopperId(shopperId);
-            return shopperProductRepository.findProductsByShopperIdAndCategoryAndBrand(shopper.getId(), category, brand, pageable);
+    		if(shopper != null) {
+    			return shopperProductRepository.findProductsByShopperIdAndCategoryAndBrand(shopper.getId(), category, brand, pageable);
+    		}else {
+    			return null;
+    		}
+            
     	}catch(Exception e) {
     		logger.error(uuid + ": ERROR: MainService Getting getProducts: " + shopperId);
     		e.printStackTrace();

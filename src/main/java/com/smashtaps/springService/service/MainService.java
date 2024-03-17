@@ -3,6 +3,8 @@ package com.smashtaps.springService.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.cache.annotation.Cacheable;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,6 +97,7 @@ public class MainService {
         
     }
     
+    @Cacheable("products")
     public List<Product> getProducts(String uuid, String shopperId, String category, String brand, int limit) {
     	try {
     		Pageable pageable = PageRequest.of(0, limit);

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.smashtaps.springService.models.LoginResponse;
@@ -25,7 +26,7 @@ import com.smashtaps.springService.repository.ShopperRepository;
 
 @Service
 public class MainService {
-	private static final Logger logger = LogManager.getLogger(AuthService.class);
+	private static final Logger logger = LogManager.getLogger(MainService.class);
 
     @Autowired
     private ProductRepository productRepository;
@@ -98,6 +99,7 @@ public class MainService {
     }
     
     @Cacheable("products")
+    @Async
     public List<Product> getProducts(String uuid, String shopperId, String category, String brand, int limit) {
     	try {
     		Pageable pageable = PageRequest.of(0, limit);

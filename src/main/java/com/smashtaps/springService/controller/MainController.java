@@ -34,7 +34,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/api/main")
 public class MainController {
 	
-	private static final Logger logger = LogManager.getLogger(AuthController.class);
+	private static final Logger logger = LogManager.getLogger(MainController.class);
 	
 	@Autowired
     private MainService mainService;
@@ -108,15 +108,19 @@ public class MainController {
     ) {
 		String uuid = UUID.randomUUID().toString().replaceAll("-", "") + " ";
 		try {
-			logger.info(uuid + " MainController: savePersonalizedData Method Called...ShopperID: " + shopperId);
-			List<Product> getList = mainService.getProducts(uuid, shopperId, category, brand, limit);
-			if(getList != null) {
-				return new ResponseModel("0", "Success", getList);
+			if(shopperId.isEmpty() || shopperId == null) {
+				return new ResponseModel("1", "Failed", "Shopper ID required!");
 			}
 			else {
-				return new ResponseModel("0", "Success - No Data", null);
+				logger.info(uuid + " MainController: savePersonalizedData Method Called...ShopperID: " + shopperId);
+				List<Product> getList = mainService.getProducts(uuid, shopperId, category, brand, limit);
+				if(getList != null) {
+					return new ResponseModel("0", "Success", getList);
+				}
+				else {
+					return new ResponseModel("0", "Success - No Data", null);
+				}
 			}
-			 
 		}catch(Exception e) {
 			logger.error(uuid + ": ERROR: MainController getProducts: ");
     		e.printStackTrace();

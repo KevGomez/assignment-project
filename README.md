@@ -17,6 +17,7 @@ Java Rest API Project for E-Commerce Client Data Maintenance and Retrieval
 
 1. The project gets up on 9090 port and can be tested through Postman or any other API clients
 2. Need to get the auth token before using the main rest API
+3. Based on provided relevancyScore property, the products will be fetched based on filters. Relevancy Score can be adjusted as per the requirement. 
    
 ## Endpoints
 

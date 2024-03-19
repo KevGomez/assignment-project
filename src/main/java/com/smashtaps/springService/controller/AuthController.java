@@ -42,19 +42,18 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
+    /*
+     * Login Method for the Application
+     * @In Credentials
+     * @Out Auth Token
+     * 
+     * */
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
     	String uuid = UUID.randomUUID().toString().replaceAll("-", "") + " ";
     	
     	try {
     		logger.info(uuid + " AuthController: Login Method Called...Username: " + request.getUsername());
-    		
-//    		Authentication authentication = authenticationManager.authenticate(
-//                    new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
-//            );
-  
-    
-//            UserDetails userDetails = authService.findByUsername(uuid, request.getUsername());
             
             RequestUser user = authService.findByUsername(uuid, request.getUsername());
             if (user == null) {
@@ -75,11 +74,6 @@ public class AuthController {
                 }
             }
             
-            
-//            String token = authService.generateToken(user);
-//
-//            return ResponseEntity.ok(new LoginResponse("0", "Success", token));
-            
     	}catch(Exception e) {
     		logger.error(uuid + ": ERROR: AuthController Login: ");
     		e.printStackTrace();
@@ -89,6 +83,12 @@ public class AuthController {
         
     }
 
+    /*
+     * Register Method for the Application
+     * @In Credentials
+     * @Out Confirmation
+     * 
+     * */
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RequestUser user) {
     	String uuid = UUID.randomUUID().toString().replaceAll("-", "") + " ";

@@ -40,12 +40,25 @@ public class MainController {
     private MainService mainService;
 	
 
+	/*
+     * To test the API
+     * @Auth Required
+     * @Out Confirmation message
+     * 
+     * */
 	@GetMapping("/test")
     public String test() {
     	return "Success Test";
         
     }
 	
+	/*
+     * To save new products to the database
+     * @Auth Required
+     * @In Product Info
+     * @Out Confirmation
+     * 
+     * */
 	@PostMapping("/product-metadata")
     public ResponseEntity<?> saveProduct(@RequestBody Product req) {
     	String uuid = UUID.randomUUID().toString().replaceAll("-", "") + " ";
@@ -64,6 +77,14 @@ public class MainController {
         
     }
 	
+	
+	/*
+     * To save new shoppers to the database
+     * @Auth Required
+     * @In Shopper Info
+     * @Out Confirmation
+     * 
+     * */
 	@PostMapping("/shop-metadata")
     public ResponseEntity<?> saveShopper(@RequestBody Shopper req) {
     	String uuid = UUID.randomUUID().toString().replaceAll("-", "") + " ";
@@ -82,6 +103,13 @@ public class MainController {
         
     }
 	
+	/*
+     * To save personalized data based on ShopperID
+     * @Auth Required
+     * @In product info + shopper ID
+     * @Out Confirmation
+     * 
+     * */
 	@PostMapping("/personalized-data")
     public ResponseEntity<?> savePersonalizedData(@RequestBody PersonalizedData req) {
     	String uuid = UUID.randomUUID().toString().replaceAll("-", "") + " ";
@@ -99,6 +127,15 @@ public class MainController {
         
     }
 	
+	/*
+     * To search products based on shopper
+     * @Auth Required
+     * @Params shopperId & filters
+     * @Out Products Info
+     * @Caching Active for fast processing
+     * @Async Active for fast processing
+     * 
+     * */
 	@GetMapping("/products")
     public ResponseModel getProducts(
             @RequestParam String shopperId,

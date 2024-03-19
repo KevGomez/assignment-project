@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.smashtaps.springService.models.Product;
+import com.smashtaps.springService.models.Shopper;
 import com.smashtaps.springService.models.ShopperProduct;
 
 @Repository
@@ -20,5 +21,7 @@ public interface ShopperProductRepository extends JpaRepository<ShopperProduct, 
 		       "ORDER BY sp.relevancyScore DESC")
 		List<Product> findProductsByShopperIdAndCategoryAndBrand(Long shopperId, String category, String brand, Double maxRelevancyScore, Pageable pageable);
 
+
+	 ShopperProduct findByShopperAndProduct(Shopper shopper, Product product);
 	
 }

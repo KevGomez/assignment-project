@@ -65,37 +65,44 @@ public class MainService {
     }
     
     public LoginResponse savePersonalizedData(String uuid, PersonalizedData req) {
-    	try {
-    		logger.info(uuid + " MainService: savePersonalizedData Method Called...ShopperID: " + req.getShopperID());
-    		Shopper shopper = shopperRepository.findByShopperId(req.getShopperID());
-    		
-    		if(shopper != null) {
-    			for(ShelfItem item : req.getShelf()) {
-    				Product product = productRepository.findByProductId(item.getProductId());
-    				if(product != null) {
-    					ShopperProduct shopperProduct = new ShopperProduct();
-    					shopperProduct.setShopper(shopper);
-    					shopperProduct.setProduct(product);
-    					shopperProduct.setRelevancyScore(item.getRelevancyScore());
-    					
-    					ShopperProduct shoppers = shopperProductRepository.save(shopperProduct);
-    				}
-    				else {
-    					return new LoginResponse("1", "Failed", "Invalid Product: " + item.getProductId());
-    				}
-    			}
-    			return new LoginResponse("0", "Success", "Personalized Data Processed for : " + req.getShopperID());
-    		}
-    		else {
-    			return new LoginResponse("1", "Failed", "Invalid Shopper");
-    		}
-    		
-    	}catch(Exception e) {
-    		logger.error(uuid + ": ERROR: MainService save Personalized Data: " + req.getShopperID());
-    		e.printStackTrace();
-    		return new LoginResponse("1", "Failed", "Personalized Data Processing Failed!");
-    	}
-        
+        try {
+            logger.info(uuid + " MainService: savePersonalizedData Method Called...ShopperID: " + req.getShopperID());
+            Shopper shopper = shopperRepository.findByShopperId(req.getShopperID());
+
+            if (shopper != null) {
+                for (ShelfItem item : req.getShelf()) {
+                    Product product = productRepository.findByProductId(item.getProductId());
+                    if (product != null) {
+                        ShopperProduct existingShopperProductCheck = new ShopperProduct();
+                        
+                        existingShopperProductCheck = shopperProductRepository.findByShopperAndProduct(shopper, product);
+                        
+                        if (existingShopperProductCheck != null) {
+                            existingShopperProductCheck.setRelevancyScore(item.getRelevancyScore());
+                            shopperProductRepository.save(existingShopperProductCheck);
+
+                        } else {
+                            ShopperProduct shopperProduct = new ShopperProduct();
+                            shopperProduct.setShopper(shopper);
+                            shopperProduct.setProduct(product);
+                            shopperProduct.setRelevancyScore(item.getRelevancyScore());
+
+                            shopperProductRepository.save(shopperProduct);
+                        }
+                    } else {
+                        return new LoginResponse("1", "Failed", "Invalid Product: " + item.getProductId());
+                    }
+                }
+                return new LoginResponse("0", "Success", "Personalized Data Processed for : " + req.getShopperID());
+            } else {
+                return new LoginResponse("1", "Failed", "Invalid Shopper");
+            }
+
+        } catch (Exception e) {
+            logger.error(uuid + ": ERROR: MainService save Personalized Data: " + req.getShopperID());
+            e.printStackTrace();
+            return new LoginResponse("1", "Failed", "Personalized Data Processing Failed!");
+        }
     }
     
     @Cacheable("products")
